@@ -1,4 +1,5 @@
 import PageHeader from "../../components/PageHeader";
+import Button from "../../components/Utils/Button";
 
 import { Input } from "../../components/Utils/Input";
 import { Select } from "../../components/Utils/Select";
@@ -16,6 +17,10 @@ export default function NewContact() {
         <option value="1011">TikTok</option>
         <option value="1213">Orkut</option>
       </Select>
+      <Button type="button">Salvar alterações</Button>
+      <Button type="button" disabled>
+        Salvar alterações
+      </Button>
     </>
   );
 }
