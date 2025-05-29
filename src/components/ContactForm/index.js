@@ -1,0 +1,42 @@
+import PropTypes from "prop-types";
+
+import { Form } from "./style";
+
+import FormGroup from "../FormGroup";
+import { Input } from "../Utils/Input";
+import { Select } from "../Utils/Select";
+import Button from "../Utils/Button";
+
+export default function ContactForm({ buttonLabel }) {
+  return (
+    <Form>
+      <FormGroup>
+        <Input placeholder="Nome" />
+      </FormGroup>
+
+      <FormGroup>
+        <Input placeholder="E-mail" />
+      </FormGroup>
+
+      <FormGroup>
+        <Input placeholder="Telefone" />
+      </FormGroup>
+
+      <FormGroup>
+        <Select>
+          <option value="123">Instagram</option>
+          <option value="456">Facebook</option>
+          <option value="789">Twitter</option>
+          <option value="1011">TikTok</option>
+          <option value="1213">Orkut</option>
+        </Select>
+      </FormGroup>
+
+      <Button type="submit">{buttonLabel}</Button>
+    </Form>
+  );
+}
+
+ContactForm.propTypes = {
+  buttonLabel: PropTypes.string.isRequired,
+};

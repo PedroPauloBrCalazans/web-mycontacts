@@ -13,8 +13,6 @@ export const Select = styled.select`
   font-size: 16px;
   transition: border-color 0.2s ease-in;
 
-  margin-top: 20px;
-
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary.main};
   }
