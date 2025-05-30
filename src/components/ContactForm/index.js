@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { Form } from "./style";
+import { ButtonContainer, Form } from "./style";
 
 import FormGroup from "../FormGroup";
 import { Input } from "../Utils/Input";
@@ -32,7 +32,9 @@ export default function ContactForm({ buttonLabel }) {
         </Select>
       </FormGroup>
 
-      <Button type="submit">{buttonLabel}</Button>
+      <ButtonContainer type="submit">
+        <Button type="submit">{buttonLabel}</Button>
+      </ButtonContainer>
     </Form>
   );
 }
