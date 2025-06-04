@@ -11,7 +11,7 @@ export default function ContactForm({ buttonLabel }) {
   return (
     <Form>
       <FormGroup>
-        <Input placeholder="Nome" />
+        <Input placeholder="Nome" onChange={() => console.log("digitou")} />
       </FormGroup>
 
       <FormGroup error="O formato do e-mail é inválido.">
