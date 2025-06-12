@@ -6,20 +6,30 @@ import FormGroup from "../FormGroup";
 import { Input } from "../Utils/Input";
 import { Select } from "../Utils/Select";
 import Button from "../Utils/Button";
+import { useState } from "react";
 
 export default function ContactForm({ buttonLabel }) {
+  const [nome, setNome] = useState("");
+
+  // const emailInput = useRef(null);
+
   return (
     <Form>
       <FormGroup>
         <Input
+          value={nome}
           placeholder="Nome"
-          onChange={(event) => console.log(event.target.value)}
+          onChange={(event) => setNome(event.target.value)}
         />
       </FormGroup>
 
       <FormGroup error="O formato do e-mail é inválido.">
         <Input placeholder="E-mail" error />
       </FormGroup>
+
+      {/* <FormGroup>
+        <Input placeholder="E-mail" ref={emailInput} /> 
+      </FormGroup>  ** ACESSANDO O ELEMENTO DE DENTRO DA DOM **  */}
 
       <FormGroup>
         <Input placeholder="Telefone" />
