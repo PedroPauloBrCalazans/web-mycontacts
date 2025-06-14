@@ -10,38 +10,52 @@ import { useState } from "react";
 
 export default function ContactForm({ buttonLabel }) {
   const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [category, setCategory] = useState("");
 
-  // const emailInput = useRef(null);
+  function handleSubmit(event) {
+    event.preventDefault(); //previne o comportamento padrão daquele evento
+    console.log({ nome, email, telefone, category });
+  }
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Input
-          value={nome}
           placeholder="Nome"
+          value={nome}
           onChange={(event) => setNome(event.target.value)}
         />
       </FormGroup>
 
-      <FormGroup error="O formato do e-mail é inválido.">
-        <Input placeholder="E-mail" error />
-      </FormGroup>
-
-      {/* <FormGroup>
-        <Input placeholder="E-mail" ref={emailInput} /> 
-      </FormGroup>  ** ACESSANDO O ELEMENTO DE DENTRO DA DOM **  */}
-
       <FormGroup>
-        <Input placeholder="Telefone" />
+        <Input
+          placeholder="E-mail"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
       </FormGroup>
 
       <FormGroup>
-        <Select>
-          <option value="123">Instagram</option>
-          <option value="456">Facebook</option>
-          <option value="789">Twitter</option>
-          <option value="1011">TikTok</option>
-          <option value="1213">Orkut</option>
+        <Input
+          placeholder="Telefone"
+          value={telefone}
+          onChange={(event) => setTelefone(event.target.value)}
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Select
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
+        >
+          <option value="">Categorias</option>
+          <option value="insta">Instagram</option>
+          <option value="face">Facebook</option>
+          <option value="twi">Twitter</option>
+          <option value="tiktok">TikTok</option>
+          <option value="ork">Orkut</option>
         </Select>
       </FormGroup>
 
